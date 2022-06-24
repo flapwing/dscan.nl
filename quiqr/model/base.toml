@@ -1,0 +1,112 @@
+hugover = "0.66.0"
+
+[[serve]]
+key = "default"
+config = "config.toml"
+
+[[build]]
+key = "default"
+config = "config.toml"
+
+[[menu]]
+key = "content"
+title = "Content"
+
+  [[menu.menuItems]]
+  key = "frontpage"
+
+[[menu]]
+key = "QuiqrMeta"
+title = "Meta"
+matchRole = "siteDeveloper"
+
+  [[menu.menuItems]]
+  key = "quiqrReadme"
+
+  [[menu.menuItems]]
+  key = "quiqrEtalage"
+
+
+[[collections]]
+key = "posts"
+title = "Posts"
+folder = "content/posts/"
+extension = "md"
+dataformat = "toml"
+itemtitle = "Post"
+
+  [[collections.fields]]
+  key = "info"
+  type = "info"
+  content = "# Info\nYou can write custom instructions here."
+
+  [[collections.fields]]
+  key = "title"
+  title = "Title"
+  type = "string"
+
+  [[collections.fields]]
+  key = "mainContent"
+  title = "Content"
+  type = "markdown"
+
+  [[collections.fields]]
+  key = "pubdate"
+  title = "Pub Date"
+  type = "date"
+  default = "now"
+
+  [[collections.fields]]
+  key = "draft"
+  title = "Draft"
+  type = "boolean"
+
+  [[collections.fields]]
+  key = "bundle-manager"
+  type = "bundle-manager"
+  path = "imgs"
+  extensions = [
+    "png",
+    "jpg",
+    "gif"
+  ]
+
+    [[collections.fields.fields]]
+    key = "title"
+    title = "Title"
+    type = "string"
+
+    [[collections.fields.fields]]
+    key = "description"
+    title = "Description"
+    type = "string"
+    multiLine = true
+
+
+[[singles]]
+key = "frontpage"
+title = "Front Page"
+file = "content/_index.md"
+dataformat = "yaml"
+
+  [[singles.fields]]
+  key = "title"
+  title = "Site Title"
+  type = "string"
+  tip = "Your page title."
+
+
+  [[singles.fields]]
+  key = "infographic"
+  title = "Infographic PDF"
+  type = "bundle-manager"
+  tip = "upload the pdf to be used as infographic"
+  path = "/static/"
+  forceFileName = "infographic.pdf"
+  extensions = ["pdf"]
+
+  [[singles.fields.fields]]
+  key = "thumb"
+  title = "Thumb"
+  type = "bundle-image-thumbnail"
+

@@ -1,0 +1,60 @@
+---
+- title: Home Readme
+  file: quiqr/home/index.md
+  key: quiqrReadme
+  dataformat: yaml
+  fields:
+    - key: mainContent
+      title: Content
+      type: string
+      multiLine: true
+
+- title: Etalage
+  file: quiqr/etalage/etalage.json
+  key: quiqrEtalage
+  dataformat: json
+  fields:
+    - key: templateTitle
+      title: Template Title
+      type: string
+    - key: description
+      title: Description
+      type: string
+    - key: homepage
+      title: Homepage
+      type: string
+    - key: templateUrl
+      title: Template URL
+      type: string
+    - key: screenshots
+      title: Screenshots
+      type: bundle-manager
+      path: /quiqr/etalage/screenshots
+      extension: ['jpg', 'png', 'gif']
+      fields:
+        - key: thumb
+          type: bundle-image-thumbnail
+          title: thumb
+
+    - key: siteFeatures
+      title: Site Features
+      type: chips
+    - key: tags
+      title: Tags
+      type: chips
+    - key: quiqr
+      title: Quiqr Specs
+      type: nest
+      groupdata: true
+      fields:
+        - key: features
+          title: features
+          type: chips
+
+        - key: modelLanguages
+          title: Languages
+          type: chips
+
+        - key: minimalVersion
+          title: Minimal Version
+          type: string

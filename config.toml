@@ -1,0 +1,6 @@
+baseURL = "http://example.org/"
+enableRobotsTXT = true
+googleAnalytics = ""
+languageCode = "en-us"
+theme = "dscan"
+title = "DSCAN"
